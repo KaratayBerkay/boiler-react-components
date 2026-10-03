@@ -1,0 +1,234 @@
+/* ── Toolbar ──────────────────────────────────── */
+.dt-toolbar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.dt-search {
+  flex: 1;
+  min-width: 180px;
+  height: 40px;
+  padding: 0 14px;
+  background: var(--paper);
+  border: 1.5px solid rgba(27, 23, 18, 0.18);
+  border-radius: 7px;
+  font-size: 13px;
+  color: var(--ink);
+  outline: none;
+}
+.dt-search:focus { border-color: var(--gold); }
+.dt-toolbar-right { display: flex; gap: 8px; flex-wrap: wrap; }
+.dt-chip {
+  height: 40px;
+  padding: 0 14px;
+  background: var(--paper);
+  border: 1.5px solid rgba(27, 23, 18, 0.18);
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+}
+.dt-chip:hover { border-color: var(--gold); color: var(--ink); }
+
+.dt-btn {
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s;
+}
+.dt-btn.primary {
+  background: var(--gold);
+  border: 2px solid var(--ink);
+  color: var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+.dt-btn.primary:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.dt-btn.ghost {
+  background: var(--paper);
+  border: 1.5px solid rgba(27, 23, 18, 0.18);
+  color: var(--muted);
+}
+.dt-btn.ghost:hover { border-color: var(--gold); color: var(--ink); }
+.dt-btn.danger {
+  background: #ef4444;
+  border: 2px solid var(--ink);
+  color: #fff;
+  box-shadow: 3px 3px 0 var(--ink);
+}
+.dt-btn.danger:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--ink); }
+
+.dt-selection {
+  font-size: 12px;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--gold) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--gold) 40%, transparent);
+  padding: 8px 14px;
+  border-radius: 6px;
+}
+.dt-link { color: var(--gold); font-weight: 700; cursor: pointer; }
+.dt-link:hover { color: var(--signal); }
+.dt-link.danger { color: #ef4444; }
+
+/* ── Table ────────────────────────────────────── */
+.dt-scroll { overflow-x: auto; }
+.dt-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+}
+.dt-table th {
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--sand);
+  padding: 10px 12px;
+  border-bottom: 1.5px solid rgba(27, 23, 18, 0.12);
+  white-space: nowrap;
+}
+.dt-table td {
+  padding: 12px;
+  font-size: 13px;
+  color: var(--ink);
+  border-bottom: 1px solid rgba(27, 23, 18, 0.07);
+}
+.dt-table tbody tr {
+  transition: background 0.15s;
+}
+.dt-table tbody tr:hover { background: rgba(27, 23, 18, 0.03); }
+.dt-table tbody tr.selected {
+  background: color-mix(in srgb, var(--gold) 10%, transparent);
+}
+.dt-table tbody tr:last-child td { border-bottom: none; }
+
+.dt-sortable {
+  cursor: pointer;
+  user-select: none;
+}
+.dt-sortable:hover { color: var(--gold); }
+.dt-sortable.asc, .dt-sortable.desc { color: var(--gold); }
+
+.dt-check { width: 36px; }
+.dt-check input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--gold);
+  cursor: pointer;
+}
+.dt-num, .dt-table .num { text-align: right; font-variant-numeric: tabular-nums; }
+
+.dt-member { display: flex; align-items: center; gap: 10px; }
+.dt-member-name { font-weight: 600; font-size: 13px; }
+.dt-member-email { font-size: 11px; color: var(--sand); }
+.dt-cell-muted { color: var(--sand); }
+.dt-role {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 9px;
+  background: rgba(27, 23, 18, 0.06);
+  border-radius: 4px;
+  color: var(--muted);
+}
+.dt-status {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 4px;
+}
+.dt-status.active { background: rgba(34, 197, 94, 0.14); color: #15803d; }
+.dt-status.trial { background: rgba(245, 158, 11, 0.14); color: #92400e; }
+.dt-status.inactive { background: rgba(27, 23, 18, 0.08); color: var(--muted); }
+
+.dt-actions { width: 50px; text-align: right; }
+
+.dt-table.mini { min-width: 0; }
+.dt-table.mini td { padding: 9px 10px; font-size: 12px; }
+
+/* ── Footer / Pager ───────────────────────────── */
+.dt-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--sand);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.dt-pager { display: flex; gap: 5px; }
+.dt-page {
+  min-width: 32px;
+  height: 32px;
+  background: var(--paper);
+  border: 1.5px solid rgba(27, 23, 18, 0.15);
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.dt-page:hover:not(:disabled) { border-color: var(--gold); color: var(--ink); }
+.dt-page.active {
+  background: var(--gold);
+  border-color: var(--ink);
+  color: var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+.dt-page:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ── Compact ──────────────────────────────────── */
+.dt-compact { display: flex; flex-direction: column; }
+.dt-compact-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 11px 8px;
+  border-bottom: 1px solid rgba(27, 23, 18, 0.07);
+  font-size: 13px;
+}
+.dt-compact-row:last-child { border-bottom: none; }
+.dt-compact-row:hover { background: rgba(27, 23, 18, 0.03); }
+.dt-compact-name { font-weight: 600; color: var(--ink); }
+
+/* ── Empty / Loading ──────────────────────────── */
+.dt-empty {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.dt-empty-ico { font-size: 40px; }
+.dt-empty-title { font-size: 18px; font-weight: 900; color: var(--ink); }
+.dt-empty-desc { font-size: 12px; color: var(--sand); max-width: 240px; line-height: 1.6; }
+
+/* ── Bulk bar ─────────────────────────────────── */
+.dt-bulkbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding: 12px 16px;
+  background: var(--ink);
+  border: 2px solid var(--gold);
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 color-mix(in srgb, var(--gold) 35%, transparent);
+  font-size: 13px;
+  color: var(--paper-2);
+}
+.dt-bulkbar-actions { display: flex; gap: 8px; }
+.dt-bulkbar .dt-btn.ghost {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: var(--paper-2);
+}
+.dt-bulkbar .dt-btn.ghost:hover { border-color: var(--gold); color: var(--gold); }

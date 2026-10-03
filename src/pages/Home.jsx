@@ -44,6 +44,30 @@ const componentCategories = [
     icon: '📂',
     badge: 'badge-modern',
   },
+  {
+    path: '/components/feedback',
+    name: 'Feedback',
+    title: 'Modals, Toasts & Overlays',
+    desc: 'Confirmation modals, toast stack, alerts, tooltips, dropdown menus, tabs.',
+    icon: '🔔',
+    badge: 'badge-brand',
+  },
+  {
+    path: '/components/table',
+    name: 'Data',
+    title: 'Data Table',
+    desc: 'Sortable columns, row selection, pagination, empty and loading states.',
+    icon: '📋',
+    badge: 'badge-classic',
+  },
+  {
+    path: '/components/forms',
+    name: 'Inputs',
+    title: 'Form Controls',
+    desc: 'Multi-step wizard, file upload, selects, toggles, sliders, date pickers.',
+    icon: '🧩',
+    badge: 'badge-modern',
+  },
 ]
 
 const pageTemplates = [

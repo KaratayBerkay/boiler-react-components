@@ -12,6 +12,9 @@ import SocialComponents from './pages/components/social/Social'
 import BiometricComponents from './pages/components/biometric/Biometric'
 import MfaComponents from './pages/components/mfa/Mfa'
 import SidebarComponents from './pages/sidebar/Sidebar'
+import FeedbackComponents from './pages/components/feedback/Feedback'
+import DataTableComponents from './pages/components/table/DataTable'
+import FormComponents from './pages/components/forms/Forms'
 import DashboardPage from './pages/dashboard/Dashboard'
 import ContactsPage from './pages/contacts/Contacts'
 import HistoryPage from './pages/history/History'
@@ -84,6 +87,9 @@ export default function App() {
           <Route path="/components/biometric" element={<BiometricComponents />} />
           <Route path="/components/mfa" element={<MfaComponents />} />
           <Route path="/components/sidebar" element={<SidebarComponents />} />
+          <Route path="/components/feedback" element={<FeedbackComponents />} />
+          <Route path="/components/table" element={<DataTableComponents />} />
+          <Route path="/components/forms" element={<FormComponents />} />
           <Route path="/app/dashboard" element={<DashboardPage />} />
           <Route path="/app/contacts" element={<ContactsPage />} />
           <Route path="/app/history" element={<HistoryPage />} />
