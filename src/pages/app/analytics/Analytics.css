@@ -1,0 +1,39 @@
+.line-chart {
+  padding: 10px 0;
+}
+
+.top-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.top-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 7px;
+  transition: background 0.15s;
+}
+.top-item:hover { background: rgba(27, 23, 18, 0.03); }
+.top-rank {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--sand);
+  min-width: 24px;
+}
+.top-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.top-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.top-detail {
+  font-size: 11px;
+  color: var(--sand);
+}

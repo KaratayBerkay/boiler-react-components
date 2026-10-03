@@ -1,0 +1,51 @@
+.team-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.team-stat-card {
+  background: var(--paper-2);
+  border: 1.5px solid rgba(27, 23, 18, 0.10);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 3px 3px 0 rgba(27, 23, 18, 0.05);
+}
+.team-stat-value {
+  display: block;
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+.team-stat-label {
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.team-table-wrap {
+  background: var(--paper-2);
+  border: 1.5px solid rgba(27, 23, 18, 0.10);
+  border-radius: 8px;
+  padding: 8px 16px;
+  box-shadow: 3px 3px 0 rgba(27, 23, 18, 0.05);
+  overflow-x: auto;
+}
+
+.role-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.role-badge.owner { background: var(--gold); color: var(--ink); }
+.role-badge.admin { background: rgba(139, 92, 246, 0.15); color: #6d28d9; }
+.role-badge.member { background: rgba(59, 130, 246, 0.12); color: #1d4ed8; }
+.role-badge.editor { background: rgba(34, 197, 94, 0.12); color: #15803d; }
+.role-badge.viewer { background: rgba(27, 23, 18, 0.08); color: var(--muted); }
+.role-badge.pending { background: rgba(245, 158, 11, 0.12); color: #92400e; }

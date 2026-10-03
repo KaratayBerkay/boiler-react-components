@@ -1,0 +1,134 @@
+.conf-page {
+  min-height: 100vh;
+  background: #0a0a0f;
+  display: flex;
+  flex-direction: column;
+}
+
+.conf-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 28px;
+  background: rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.conf-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+}
+.conf-meta {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.conf-timer {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+}
+.conf-rec {
+  font-size: 11px;
+  font-weight: 700;
+  color: #ef4444;
+  letter-spacing: 0.08em;
+  animation: recBlink 1.5s ease-in-out infinite;
+}
+@keyframes recBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.conf-count {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.conf-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 12px;
+  padding: 20px;
+}
+
+.conf-tile {
+  background: #16161f;
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+.conf-tile.speaking {
+  border-color: var(--gold);
+  box-shadow: 0 0 30px color-mix(in srgb, var(--gold) 20%, transparent);
+}
+.conf-tile.gold { background: linear-gradient(135deg, #1a1510, #16161f); }
+
+.conf-tile-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.conf-tile.green .conf-tile-avatar { background: #22c55e; }
+.conf-tile.blue .conf-tile-avatar { background: #3b82f6; }
+.conf-tile.purple .conf-tile-avatar { background: #8b5cf6; }
+.conf-tile.red .conf-tile-avatar { background: #ef4444; }
+.conf-tile.gold .conf-tile-avatar { background: var(--gold); color: var(--ink); }
+
+.conf-tile-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+}
+.conf-tile-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+}
+.conf-tile-mic {
+  font-size: 14px;
+}
+.conf-tile-mic.muted { opacity: 0.5; }
+
+.speaking-indicator {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 10px;
+  height: 10px;
+  background: var(--gold);
+  border-radius: 50%;
+  animation: speakPulse 1s ease-in-out infinite;
+}
+@keyframes speakPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+}
+
+@media (max-width: 768px) {
+  .conf-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}

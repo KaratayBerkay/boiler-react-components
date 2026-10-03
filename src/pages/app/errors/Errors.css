@@ -1,0 +1,93 @@
+.errors-page {
+  min-height: 100vh;
+  background: var(--ink);
+  padding: 80px 40px 40px;
+  position: relative;
+}
+
+.errors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.error-card {
+  background: rgba(27, 23, 18, 0.95);
+  border: 1.5px solid rgba(232, 178, 58, 0.30);
+  border-radius: 10px;
+  padding: 40px 32px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 6px 6px 0 rgba(232, 178, 58, 0.12);
+  transition: all 0.18s;
+}
+.error-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+  box-shadow: 8px 8px 0 rgba(232, 178, 58, 0.20);
+}
+
+.error-card.empty {
+  border-style: dashed;
+}
+
+.error-code {
+  font-size: 64px;
+  font-weight: 900;
+  color: color-mix(in srgb, var(--gold) 40%, transparent);
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+.error-icon {
+  font-size: 48px;
+}
+.error-icon.big { font-size: 64px; }
+
+.error-card h2 {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--paper-2);
+  letter-spacing: -0.03em;
+}
+.error-card p {
+  font-size: 13px;
+  color: var(--sand);
+  line-height: 1.6;
+  max-width: 300px;
+}
+
+.error-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+.error-btn {
+  padding: 10px 22px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--paper-2);
+  cursor: pointer;
+  transition: all 0.18s;
+}
+.error-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+.error-btn.primary {
+  background: var(--gold);
+  border: 2px solid var(--ink);
+  color: var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+.error-btn.primary:hover {
+  background: var(--signal);
+  box-shadow: 4px 5px 0 var(--ink);
+}
